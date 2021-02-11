@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 17:59:58 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/09 20:14:37 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/02/08 20:12:42 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/08 20:22:33 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 
-int		ft_strlen(char *str)
+void		ft_putstr(char *str, int fd)
 {
-	int i;
+	int counter;
 
-	i = 0;
-	while (str[i] != 0)
+	counter = 0;
+	while (str[counter] != '\0')
 	{
-		i++;
+		write(&fd, &str[counter], 1);
+		counter++;
 	}
-	return (i);
 }

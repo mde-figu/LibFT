@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 17:59:58 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/09 20:14:37 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/02/09 11:44:30 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/10 16:23:21 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int		ft_strlen(char *str)
+size_t        *strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int i;
+    size_t srcsize;
+    size_t i;
 
-	i = 0;
-	while (str[i] != 0)
-	{
-		i++;
-	}
-	return (i);
+    if (!dst || !src)
+        return (0);
+    srcsize = ft_strlen(src);
+    i = 0;
+    if (dstsize != 0)
+    {
+        while (src[i] != '\0' && i < dstsize - 1)
+        {
+            dst[i] = src[i];
+            i = i + 1;
+        }
+        dst[i] = '\0';
+    }
+    return (dstsize);
 }
