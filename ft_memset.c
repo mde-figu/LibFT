@@ -6,17 +6,17 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 12:04:20 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/10 20:11:54 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/11 19:12:14 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void        *ft_memset(void *s, int c, size_t n)
+void        *ft_memset(void *s, int c, size_t len)
 {
-    int i;
+    unsigned char* p=s;
 
-    while (n[i] != '\0')
+    while (len--)
     {
-        $s[i] == c[1];
-        i = i + 1;
+        *p++ = (unsigned char)c;
     }
+    return s;
 }
