@@ -6,14 +6,14 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 12:16:43 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/12 12:57:52 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/12 16:05:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
 void    *ft_memchr(const void *s, int c, size_t len);
-void    *memcpy(void *dest, const void *src, int c, size_t len)
+void    *ft_memcpy(void *dest, const void *src, int c, size_t len)
 {
     void *p = ft_memchr(src, c, len);
 
