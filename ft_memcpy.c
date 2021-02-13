@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 19:17:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/12 10:38:19 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:18:31 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void        *ft_memcpy(void *dest, const void *src, int len)
 {
-    int     i;
-    char    *copydest;
-    char    *copysrc;
+    size_t     i;
+    i = 0;
+
     if ((dest == NULL) && (src == NULL) && (len > 0))
     return (0);
     while (i < n)
     {
-        copydest = copysrc;
+        ((unsigned char *)dest)[i] = ((unsigned char *)src)[i]
         i = i + 1;
     }
-    return (copydest);
+    return (dest);
 }
