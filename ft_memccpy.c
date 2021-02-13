@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 12:16:43 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/12 16:05:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:34:40 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
 void    *ft_memchr(const void *s, int c, size_t len);
-void    *ft_memcpy(void *dest, const void *src, int c, size_t len)
+void    *ft_memccpy(void *dest, const void *src, int c, size_t len)
 {
     void *p = ft_memchr(src, c, len);
 
