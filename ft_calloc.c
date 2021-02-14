@@ -6,11 +6,11 @@
 /*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 12:25:42 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/14 12:30:24 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/02/14 12:31:06 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void        *calloc(size_t nmemb, size_t size);
+void        *ft_calloc(size_t nmemb, size_t size);
 {
     void *ptr;
     size_t i;
