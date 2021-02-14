@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 19:16:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/12 19:38:20 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/13 16:10:37 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char    *ft_strchr(const char *s, int c)
 {
-    int i;
-
-    i = 0;
-    while (*s != '\0' && c != *s )
+    while (*s != '\0' && c != *s)
         s = s + 1;
     if (c == *s)
         return((char *)s);
