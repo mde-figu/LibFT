@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:06:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/12 18:06:50 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/17 18:36:10 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char            ft_toupper(int c)
+char		ft_toupper(int c)
 {
-        if (c >= 97 && c <= 122)
-                return (c - 32);
-        return (c);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

@@ -6,21 +6,17 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 15:32:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:19:45 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/17 17:45:17 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isascii(char c)
+int		ft_isascii(char c)
 {
-    int ret;
-    
-    if (c >= 0 && c <= 127)
-    {
-        ret = 1;
-    }
-    else
-    {
-        ret = 0;
-    }
-    return (ret);
+	int ret;
+
+	if (c >= 0 && c <= 127)
+		ret = 1;
+	else
+		ret = 0;
+	return (ret);
 }

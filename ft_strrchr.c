@@ -6,20 +6,21 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 19:28:34 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:07:47 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/17 17:39:43 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int i;
-    const char *len;
-    len = s;
-    i = ft_strlen(s);
-    s = (s + i);
-    while (*s != *len && c != *s )
-        s = s - 1;
-    if (c == *s)
-        return((char *)s);
-    return(0);
+	int i;
+	const char *len;
+
+	len = s;
+	i = ft_strlen(s);
+	s = (s + i);
+	while (*s != *len && c != *s)
+		s = s - 1;
+	if (c == *s)
+		return ((char *)s);
+	return (0);
 }
