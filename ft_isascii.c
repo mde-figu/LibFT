@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 15:32:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/08 15:53:28 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/17 15:42:44 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     (char c)
+int     ft_isascii(char c)
 
 {
     int ret;
