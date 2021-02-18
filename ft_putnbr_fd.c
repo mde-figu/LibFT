@@ -6,10 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 20:23:28 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 21:02:48 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:28:45 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void		ft_putnbr(int n, int fd)
 {

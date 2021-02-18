@@ -1,0 +1,1066 @@
+!<arch>
+ft_isprint.c/   0           0     0     644     1052      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 17:23:05 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 15:43:01 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int     ft_isprint(char c)
+{
+    int ret;
+
+    if ((c >= 20 && c <= 126)
+    {
+        ret = 1;
+    }
+    else
+    {
+        ret = 0;
+    }
+    return (ret);
+}
+ft_memset.c/    0           0     0     644     1049      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 12:04:20 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:05:51 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void        *ft_memset(void *s, int c, size_t len)
+{
+    unsigned char* p=s;
+
+    while (len--)
+    {
+        *p++ = (unsigned char)c;
+    }
+    return s;
+}
+
+ft_strjoin.c/   0           0     0     644     1329      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/16 23:58:57 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:47:06 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char		*ft_strjoin(char const s1, char const s2)
+{
+	char	*jstr
+	int	i;
+	int	j;
+	int	ls1;
+	int	ls2;
+
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	i =  0;
+	j =  0;
+	ls1 = ft_strlen(s1);
+	ls2 = ft_strlen(s2);
+	if (!(jstr = ((char *)malloc(ls1 + ls2 + 1))))
+		return (0);
+	while (s1[i] != '\0')
+	{
+		jstr[i] = s1[i];
+		i = i + 1;
+	}
+	while (s2[i] != '\0')
+	{
+		jstr[i] = s2[j];
+		i = i + 1;
+		j = j + 1;
+	}
+	nstr[i] = '\0';
+	return(nstr);
+}
+
+ft_strtrim.c/   0           0     0     644     1160      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/17 11:34:19 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:44:06 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char		*ft_strtrim(char const *s1, char const *set)
+{
+	size_t i;
+
+	i = ft_strlen(s1);
+	if (s1 == NULL || set == NULL)
+		return (0);
+	while (ft_strchr(set, *s1) && *s1)
+		s1 = s1 + 1;
+	while (ft_strchr(set, s1[i]) && i)
+		i = i - 1;
+	return (ft_substr(s1, 0, i + 1));
+}
+ft_atoi.c/      0           0     0     644     1466      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/12 19:15:39 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int		ft_atoi(const char *nptr)
+{
+	int count;
+	int countstr;
+	int sign;
+
+	sign = 1;
+	count = 0;
+	countstr = 0;
+	while (nptr[count] == '\t' || nptr[count] == '\r' || nptr[count] == '\v'
+            nptr[count] == '\f' || nptr[count] == '\n' || nptr[count] == ' ')
+		count = count + 1;
+	if (nptr[count] == '-' || nptr[count] == '+')
+	{
+		if (nptr[count] == '-')
+			sign = sign * (-1);
+		count = count + 1;
+	}
+	while (nptr[count] >= 48 && nptr[count] >= 57)
+	{
+    	countstr = (countstr * 10) + (nptr[count] - '0');
+        count = count + 1;
+    }
+	return (countstr * sign);
+}
+ft_itoa.c/      0           0     0     644     1497      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 19:44:18 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 20:04:09 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+static  size_t      ft_countdigit(int n)
+{
+    if ((n / 10) == NULL)
+        return (1);
+    else
+        return (ft_countdigit(n / 10) + 1)
+}
+char        *ft_itoa (int n)
+{
+    unsigned int    num;
+    char    *c;
+    size_t  len;
+
+    len = ft_countdigit(n);
+    if(n < 0)
+    {
+        num = -(unsigned int)n;
+        len = len + 1;
+    }
+    else
+        num = (unsigned int)n;
+    if ((s = malloc((len + 1) * sizeof(*s))))
+        return(0);
+    s[len] = '\0';
+    while(len--)
+    {
+        s[len] = num % 10 + '0';
+        num = num / 10;
+    }
+    if (n < 0)
+        s[0] = '-';
+    return (s);
+}
+
+ft_putchar_fd.c/0           0     0     644     973       `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/05 19:06:10 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:05:57 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void		ft_putchar_fd(char c, int fd)
+{
+	write(&fd, &c, 1);
+}
+
+ft_strlcat.c/   0           0     0     644     1302      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/09 13:50:34 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/09 20:12:15 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char        *strcat(char *dst, const char *src, size_t dstlen)
+{
+    size_t i1;
+    size_t i2;
+
+    if (dstlen <= ft_strlen(dst))
+        return (dstlen + ft_strlen(src));
+    i1 = ft_strlen(dst);
+    i2 = 0;
+    while (src[i2] != '\0' && i1 + 1 < dstlen)
+    {
+        dst[i2] = src[i1];
+        i1 = i1 + 1;
+        i2 = i2 + 1;
+    }
+    dst[i1] = '\0';
+    return (ft_strlen(dst) + ft_strlen(&src[i2]));
+}
+ft_substr.c/    0           0     0     644     1286      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/16 13:42:03 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:07:56 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char        *ft_substr(char const *s, unsigned int start, size_t len)
+{
+    char    *nstr
+    size_t  i;
+    size_t  j;
+
+    nstr = ((char *)malloc(len + 1))
+    if (s == NULL || nstr == NULL)
+        return (0);
+    i = start;
+    j = 0;
+    while (i < ft_strlen(s) && j < len)
+    {
+        nstr[j] = s[i];
+        j = j + 1;
+        i = i + 1;
+    }
+    nstr[j] = '\0';
+    return(nstr);
+
+}
+ft_bzero.c/     0           0     0     644     996       `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 16:04:39 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 15:41:13 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void        ft_bzero(void *s, size_t n)
+{
+    if (s >= 0)
+    ft_memset(s, '\0' , n)
+
+    return (0);
+}
+ft_putendl_fd.c/0           0     0     644     981       `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/17 16:40:18 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 18:34:43 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void		ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+}
+
+ft_strlcpy.c/   0           0     0     644     1218      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/09 11:44:30 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:42:34 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+size_t		*ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t srcsize;
+	size_t i;
+
+	if (dst == NULL || src == NULL)
+		return (0);
+	srcsize = ft_strlen(src);
+	i = 0;
+	if (dstsize != 0)
+	{
+		while (src[i] != '\0' && i < dstsize - 1)
+		{
+			dst[i] = src[i];
+			i = i + 1;
+		}
+		dst[i] = '\0';
+	}
+	return (dstsize);
+}
+ft_tolower.c/   0           0     0     644     1015      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/05 19:31:44 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/12 18:06:02 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char            ft_tolower(int c)
+{
+        if (c >= 65 && c <= 90)
+                return (c + 32);
+        return (c);
+}
+
+ft_calloc.c/    0           0     0     644     1151      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/14 12:25:42 by mirkios           #+#    #+#             */
+/*   Updated: 2021/02/17 20:02:13 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void        *ft_calloc(size_t nmemb, size_t size)
+{
+    void *ptr;
+    size_t i;
+
+    i = nmemb * size;
+    if (nmemb == NULL || size == NULL)
+        return (0);
+    else
+    {
+        ptr = malloc(i);
+        ft_bzero(ptr, i);
+        return (ptr);
+    }
+}
+
+ft_memccpy.c/   0           0     0     644     1200      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 12:16:43 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/13 14:34:40 by mirkios          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
+
+void    *ft_memchr(const void *s, int c, size_t len);
+void    *ft_memccpy(void *dest, const void *src, int c, size_t len)
+{
+    void *p = ft_memchr(src, c, len);
+
+    if (p != NULL)
+        return (ft_memcpy(dest, src, p - src + 1));
+    ft_memcpy (dest, src, len);
+    return (NULL);
+}
+ft_putnbr_fd.c/ 0           0     0     644     1278      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 20:23:28 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 21:02:48 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+void		ft_putnbr(int n, int fd)
+{
+long int g_count;
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+	}
+	else
+	{
+		if (n < 0 && g_count == 0)
+		{
+			g_count = 0;
+			ft_putchar_fd('-', fd);
+			nb = (nb * (-1));
+			ft_putnbr_fd(n);
+			g_count = g_count + 1;
+		}
+		else if (n > 9)
+		{
+			ft_putnbr(n / 10);
+			ft_putnbr(n % 10);
+		}
+		else
+		{
+			ft_putchar(n + '0', fd);
+		}
+	}
+}
+ft_strlen.c/    0           0     0     644     986       `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/04 17:59:58 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 18:35:21 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int		ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != 0)
+	{
+		i++;
+	}
+	return (i);
+}
+ft_toupper.c/   0           0     0     644     978       `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 18:06:06 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 18:36:10 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char		ft_toupper(int c)
+{
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
+}
+ft_isalnum.c/   0           0     0     644     1146      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 12:23:34 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 15:41:54 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int     ft_isalnum(int c)
+{
+
+int ret;
+
+count = 0;
+ret = 1;
+
+if ((c >= 65 && c <= 90) ||
+    (c >= 97 && c <= 122))
+    {
+        ret = 1;
+    }
+else if (c >= 48 && c <= 57)
+    {
+        ret = 1;
+    }
+else
+    {
+        ret = 0;
+    }
+
+return (ret);
+
+}
+ft_memchr.c/    0           0     0     644     1279      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 11:02:11 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/12 12:29:40 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
+
+void        *ft_memchr(const void *s, int c, size_t len)
+{
+    unsigned char   *p= (unsigned char*)s;
+    unsigned char   *fdchar = NULL;
+
+    while ((s != NULL ) && (len--))
+    {
+        if (*p != (unsigned char*)c)
+        {
+            p = p + 1;
+        }
+        else
+        {
+            fdchar = p;
+            break;
+        }
+    }
+    return (fdchar);
+}
+
+ft_putstr_fd.c/ 0           0     0     644     1062      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 20:12:42 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:06:22 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void		ft_putstr(char *str, int fd)
+{
+	int counter;
+
+	counter = 0;
+	while (str[counter] != '\0')
+	{
+		write(&fd, &str[counter], 1);
+		counter++;
+	}
+}
+ft_strmapi.c/   0           0     0     644     1244      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/17 14:50:47 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 15:08:43 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+    size_t  i;
+    char    *map;
+
+    i = -1;
+    map = malloc((ft_strlen(s) + 1) * sizeof(*map));
+    if (s == NULL || map == NULL)
+        return (NULL);
+    while (i < ft_strlen(s))
+    {
+        i = i + 1;
+        map[i] = f(i, s[i]);
+    }
+    map[i] = '\0';
+    return (map);
+}
+ft_isalpha.c/   0           0     0     644     1082      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 14:36:40 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 15:42:17 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int     ft_isalpha(char c)
+{
+    int ret;
+
+    if ((c >= 65 && c <= 90) ||
+     (c >= 97 && c <= 122))
+    {
+        ret = 1;
+    }
+    else
+    {
+        ret = 0;
+    }
+    return (ret);
+}
+ft_memcmp.c/    0           0     0     644     1407      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 16:47:33 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/13 15:53:02 by mirkios          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int     ft_memcmp(const void *s1, const void *s2, size_t len)
+{
+    unsigned int *i;
+    unsigned int *j;
+    size_t count;
+    size_t res;
+    i = s1;
+    j = s2;
+    count = 0;
+    res = 0;
+
+    if (s1 == s2)
+        return (res);
+    
+    while (count < len)
+    {
+        if (*i[count] != *j[count])
+        {
+            res = (*i[count] > *j[count])?1:-1;
+            return ((*i[count] - *j[count]) * res);
+        }
+        count = count + 1;
+        i = i + 1;
+        j = j + 1;
+    }
+    return (res);
+}
+
+ft_split.c/     0           0     0     644     2106      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 14:35:58 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+static int      ft_charcount(const char *str, char c)
+{
+    int i;
+    int stop;
+
+    i = 0;
+    stop = 0;
+    while (*str != NULL)
+    {
+        if (*str != c && stop == 0)
+        {
+            stop = 1;
+            i = i + 1;
+        }
+        else if (*str == c);
+            stop = 0;
+        str = str + 1;
+    }
+    return (i);
+}
+static  char    *ft_dupstr(const char *str, int start, int end)
+{
+    char    *substr;
+    int     i;
+
+    i = 0;
+    substr = malloc(end - start) * sizeof(char)
+    while (start < end)
+        substr[i++] = str[start++];
+    substr[i] = '\0';
+    return (substr);
+}
+
+char        **ft_split(char const *s, char c)
+{
+    size_t  i;
+    size_t  j;
+    int     count;
+    char    result;
+
+    i = 0;
+    j = 0;
+    count = -1;
+    result = malloc((ft_charcount(s, c) + 1) * sizeof(char *))
+    if (s == NULL || result == NULL)
+        return (0);
+    while (i <= ft_strlen(s))
+    {
+        if (count < 0 && s[i] != c)
+            count = count + 1;
+        else if (count >= 0 && s[i] == ft_strlen(s) || s[i] == c)
+        {
+            result[j++] = ft_dupstr(s, count, i);
+            count = -1;
+        }
+        i = i + 1;
+    }
+    result[j] = '\0';
+    return (result);
+}
+ft_strncmp.c/   0           0     0     644     1374      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/13 20:36:34 by mirkios           #+#    #+#             */
+/*   Updated: 2021/02/17 17:07:37 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int     ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+    size_t i;
+    i = 0;
+    if (n == 0)
+        return (0);
+    while (i != n)
+    {
+        if (s1[i] != s2[i])
+        {
+            if (s1[i] == '\0' && s2[i] == '\0')
+                return (0)
+            if (s1[i] == '\0')
+                return ((s2[i]) * (-1))
+            if (s2[i] == '\0')
+                return (s1[i])
+            return (s1[i] - s2[i])
+        }
+        i = i + 1;
+    }
+    return (0)
+}
+ft_isascii.c/   0           0     0     644     999       `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 15:32:16 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:45:17 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int		ft_isascii(char c)
+{
+	int ret;
+
+	if (c >= 0 && c <= 127)
+		ret = 1;
+	else
+		ret = 0;
+	return (ret);
+}
+
+ft_memcpy.c/    0           0     0     644     1209      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/11 19:17:05 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/13 15:55:58 by mirkios          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
+
+void        *ft_memcpy(void *dest, const void *src, int len)
+{
+    size_t     i;
+    i = 0;
+
+    if ((dest == NULL) && (src == NULL) && (len > 0))
+    return (0);
+    while (i < n)
+    {
+        ((unsigned char *)dest)[i] = ((unsigned char *)src)[i]
+        i = i + 1;
+    }
+    return (dest);
+}
+
+ft_strchr.c/    0           0     0     644     1049      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 19:16:05 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:06:29 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char    *ft_strchr(const char *s, int c)
+{
+    while (*s != '\0' && c != *s)
+        s = s + 1;
+    if (c == *s)
+        return((char *)s);
+    return(0);
+}
+
+ft_strnstr.c/   0           0     0     644     1381      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/13 16:17:55 by mirkios           #+#    #+#             */
+/*   Updated: 2021/02/17 23:51:04 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char        *ft_strnstr(const char *big, const char *little, size_t len)
+{
+    size_t i;
+    size_t j;
+    i = 0;
+    j = 0;
+    if (little[j] != '\0') 
+    {
+        while (big[i] != '\0')
+        {
+            while (big[i + j] == little[j] && (i + j) <= len)
+            {
+                if (big[i + j] == '\0' && little[j] == '\0')
+                    return ((char *)&big[i])
+                j = j + 1;
+            }
+        i = i + 1;
+        }
+    }
+    return ((char *)big + i)
+}
+
+ft_isdigit.c/   0           0     0     644     1050      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 15:22:14 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 15:42:55 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int     ft_isdigit(char c)
+{
+    int ret;
+
+    if (c >= 48 && c <= 57)
+    {
+        ret = 1;
+    }
+    else
+    {
+        ret = 0;
+    }
+    return (ret);
+}
+ft_memmove.c/   0           0     0     644     1486      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 10:41:19 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:05:45 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
+
+void        *memmove(void *dest, const void *src, size_t len)
+{
+    int i;
+    unsigned char   *ptsrc;
+    unsigned char   *ptdest;
+    i = 0;
+    ptsrc == (unsigned char*)src;
+    ptdest == (unsigned char*)dest;
+    if (dest == NULL && src == NULL)
+        return (0);
+    if (ptsrc == ptdest)
+        return (0);
+    if (ptsrc < ptdest)
+    {
+        while(++i <= len)
+        {
+            ptdest[len - 1] = ptsrc[len - 1];
+        }
+    }
+    else
+    {
+        while (len-- > 0)
+            *(ptdest = ptdest + 1) = *(ptsrc = ptsrc + 1);
+    }   
+    return (dest);
+}
+ft_strdup.c/    0           0     0     644     1109      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/16 13:16:05 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:06:38 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char        *strdup(const char *s)
+{
+
+char *ret;
+size_t i;
+
+i = nmemb * size;
+if (nmemb == NULL || size == NULL)
+    return (0);
+else
+{
+    ret = malloc(i);
+    ft_memcpy(ret, s, ft_strlen(s));
+    return (ret);
+}
+
+}
+
+ft_strrchr.c/   0           0     0     644     1098      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 19:28:34 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/17 17:39:43 by mde-figu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int i;
+	const char *len;
+
+	len = s;
+	i = ft_strlen(s);
+	s = (s + i);
+	while (*s != *len && c != *s)
+		s = s - 1;
+	if (c == *s)
+		return ((char *)s);
+	return (0);
+}

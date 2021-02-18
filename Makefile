@@ -6,29 +6,15 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/17 22:56:11 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/18 17:16:50 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-/*
-** Your Makefile must at least contain the rules NAME, all, clean, fclean and
-** re.
-** To turn in bonuses to your project, you must include a rule bonus to your
-** Makefile, which will add all the various headers, librairies or functions
-** that are forbidden on the main part of the project. Bonuses must be in a 
-** different file _bonus.{c/h}.
-** Mandatory and bonus part evaluation is done separately.
-** If your project allows you to use your libft, you must copy its sources and 
-** its associated Makefile in a libft folder with its associated Makefile. 
-** Your project’s Makefile must compile the library by using its Makefile, 
-** then compile the project.
-*/
 
 NAME = libft.a
 COMP = gcc
 FLAGS = -Wall -Werror -Wextra
 LIB = ar -rcs
-LIB1 = 
+LIB1 = ranlib
 RM = /bin/rm -f
 HEADER = libft.h
 FILES = ft_isprint.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_atoi.c \
@@ -49,12 +35,16 @@ all:	$(NAME)
 $(NAME):	$(FILES) $(HEADER)
 			$(LIB) $(NAME) $(FILES)
 			$(LIB1) $(NAME)
-bonus:	$(OBJECTSBONUS)
+bonus:		$(OBJECTSBONUS)
 		$(BONUS) $(HEADER)
 		$(LIB) $(NAME) $(BONUS)
 		$(LIB1) $(NAME)
 
 .c.o:	$(COMP) $(FLAGS) -c $< -o $(<:.c=.o)
+
+so:
+	$(COMP) -fPIC $(FLAGS) $(FILES)
+	gcc -shared -o libft.so $(OBJECTS)
 
 clean:
 		$(RM) $(OBJECTS) $(OBJECTSBONUS)
@@ -65,3 +55,5 @@ fclean:	clean
 re:	fclean all
 
 rebonus:	fclean bonus
+
+.PHONY: all clean fclean re

@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 13:50:34 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/09 20:12:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:29:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char        *strcat(char *dst, const char *src, size_t dstlen)
 {

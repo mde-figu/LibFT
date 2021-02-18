@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 19:16:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:06:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:29:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char    *ft_strchr(const char *s, int c)
 {

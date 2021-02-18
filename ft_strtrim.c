@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 11:34:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:44:06 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:29:46 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char		*ft_strtrim(char const *s1, char const *set)
 {

@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 15:32:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:45:17 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:25:27 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_isascii(char c)
 {

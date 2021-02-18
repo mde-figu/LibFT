@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 20:12:42 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:06:22 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:28:51 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void		ft_putstr(char *str, int fd)
 {

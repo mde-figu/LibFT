@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 11:44:30 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:42:34 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:29:20 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t		*ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

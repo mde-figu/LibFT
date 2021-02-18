@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:50:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 15:08:43 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:29:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

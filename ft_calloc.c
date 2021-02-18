@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 12:25:42 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/17 20:02:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:25:10 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void        *ft_calloc(size_t nmemb, size_t size)
 {

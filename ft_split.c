@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 14:35:58 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:28:55 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int      ft_charcount(const char *str, char c)
 {

@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:41:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:05:45 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:28:12 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void        *memmove(void *dest, const void *src, size_t len)
 {

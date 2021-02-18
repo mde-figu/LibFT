@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:44:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 20:04:09 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:25:55 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static  size_t      ft_countdigit(int n)
 {

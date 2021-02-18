@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:06:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 18:36:10 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:30:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char		ft_toupper(int c)
 {

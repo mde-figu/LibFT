@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:23:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 15:43:01 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:25:36 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int     ft_isprint(char c)
 {

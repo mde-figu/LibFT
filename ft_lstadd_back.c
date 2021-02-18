@@ -6,8 +6,10 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:44:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 16:40:09 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:26:05 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void        ft_lstadd_back(t_)
+#include "libft.h"
+
+void        ft_lstadd_back(t_list)

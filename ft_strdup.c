@@ -6,9 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:16:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:06:38 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:29:05 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char        *strdup(const char *s)
 {

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 19:56:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 22:54:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:00:15 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+typedef struc   s_list
+{
+    void    *content;
+    struc  s_list   *next;
+    t_list;
+}
 
 int		ft_atoi(const char *nptr);
 void		ft_bzero(void *s, size_t n);
