@@ -6,21 +6,14 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 20:23:28 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/17 17:06:14 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/17 21:02:48 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-long int g_count;
-
-void		ft_putchar_fd(char c, int fd)
-{
-	write(&fd, &c, 1);
-}
 
 void		ft_putnbr(int n, int fd)
 {
+long int g_count;
 	if (n == -2147483648)
 	{
 		write(1, "-2147483648", 11);
