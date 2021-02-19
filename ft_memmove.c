@@ -6,36 +6,29 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:41:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 15:52:44 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:59:04 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*ptsrc;
-	unsigned char	*ptdest;
+	unsigned int	i;
+	char			temp[n + 1];
 
 	i = 0;
-	ptsrc = (unsigned char *)src;
-	ptdest = (unsigned char *)dest;
-	if (*ptdest == '\0' && *ptsrc == '\0')
-		return (0);
-	if (ptsrc == ptdest)
-		return (0);
-	if (ptsrc < ptdest)
+	temp[0] = 0;
+	while (i < n)
 	{
-		while (++i <= len)
-		{
-			ptdest[len - 1] = ptsrc[len - 1];
-		}
+		temp[i] = *((char *)src + i);
+		i++;
 	}
-	else
+	i = 0;
+	while (i < n)
 	{
-		while (len-- > 0)
-			*(ptdest = (ptdest + 1)) = *(ptsrc = (ptsrc + 1));
+		*((char *)dest + i) = temp[i];
+		i++;
 	}
 	return (dest);
 }
