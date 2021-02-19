@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:44:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:15:04 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:16:36 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static size_t	ft_countdigit(int n)
 	else
 		return (ft_countdigit(n / 10) + 1);
 }
+
 char			*ft_itoa (int n)
 {
 	unsigned int	num;
@@ -26,7 +27,7 @@ char			*ft_itoa (int n)
 	size_t			len;
 
 	len = ft_countdigit(n);
-	if(n < 0)
+	if (n < 0)
 	{
 		num = -(unsigned int)n;
 		len = len + 1;
@@ -34,9 +35,9 @@ char			*ft_itoa (int n)
 	else
 		num = (unsigned int)n;
 	if ((c = malloc((len + 1) * sizeof(*c))))
-		return(0);
+		return (0);
 	c[len] = '\0';
-	while(len--)
+	while (len--)
 	{
 		c[len] = num % 10 + '0';
 		num = num / 10;
