@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/19 20:34:38 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/19 20:35:44 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ FILES = ft_isprint.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_atoi.c \
 
 OBJECTS = $(FILES:.c=.o)
 
- BONUS = ft_lstnew.c ft_lstadd_back.c ft_lstsize.c ft_lstclear.c \
+ BONUS = ft_lstnew.c 
+ #ft_lstadd_back.c ft_lstsize.c ft_lstclear.c \
  ft_lstadd_front.c ft_lstmap.c ft_lstiter.c ft_lstlast.c ft_lstdelone.c 
 
 
