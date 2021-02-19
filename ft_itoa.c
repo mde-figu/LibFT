@@ -6,43 +6,74 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:44:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:17:33 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:50:33 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_countdigit(int n)
+static	void	rev_array(char *str, int len)
 {
-	if ((n / 10) == 0)
+	int		i;
+	char	c;
+
+	i = 0;
+	while (i < len / 2)
+	{
+		c = str[i];
+		str[i] = str[len - i - 1];
+		str[len - i - 1] = c;
+		i++;
+	}
+}
+
+static	char	*itos(char *s, unsigned int nbr, int minus)
+{
+	int	len;
+
+	len = 0;
+	while (nbr)
+	{
+		*s++ = nbr % 10 + '0';
+		nbr = (nbr - nbr % 10) / 10;
+		len++;
+	}
+	if (minus)
+	{
+		*s++ = '-';
+		len++;
+	}
+	*s = '\0';
+	rev_array(s - len, len);
+	return (s - len);
+}
+
+static	int		isminus(int n)
+{
+	if (n < 0)
 		return (1);
 	else
-		return (ft_countdigit(n / 10) + 1);
+		return (0);
 }
 
 char			*ft_itoa(int n)
 {
-	unsigned int	num;
-	char			*c;
-	size_t			len;
+	int				minus;
+	unsigned int	nbr;
+	char			*s;
 
-	len = ft_countdigit(n);
-	if (n < 0)
-	{
-		num = -(unsigned int)n;
-		len = len + 1;
-	}
+	minus = isminus(n);
+	if (minus)
+		nbr = n * (-1);
 	else
-		num = (unsigned int)n;
-	if ((c = malloc((len + 1) * sizeof(*c))))
-		return (0);
-	c[len] = '\0';
-	while (len--)
+		nbr = n;
+	if (!(s = (char *)malloc(12 * sizeof(char))))
+		return (NULL);
+	if (nbr == 0)
 	{
-		c[len] = num % 10 + '0';
-		num = num / 10;
+		s[0] = '0';
+		s[1] = '\0';
+		return (s);
 	}
-	if (n < 0)
-		c[0] = '-';
-	return (c);
+	return (itos(s, nbr, minus));
 }
