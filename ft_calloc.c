@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 12:25:42 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/19 15:16:46 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:30:21 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void		*ft_calloc(size_t nmemb, size_t size)
 {
-	void *ptr;
-	size_t i;
+	void	*ptr;
+	size_t	i;
 
 	i = nmemb * size;
 	if (nmemb == 0 || size == 0)
