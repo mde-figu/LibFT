@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:16:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:00:25 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:01:07 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ char		*strdup(const char *s)
 		ft_memcpy(ret, s, ft_strlen(s) + 1);
 		return (ret);
 	}
-
 }
