@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 19:28:34 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:29:42 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:22:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	const char *len;
+	int			i;
+	const char	*len;
 
 	len = s;
 	i = ft_strlen(s);
