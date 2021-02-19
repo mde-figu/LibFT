@@ -6,37 +6,36 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 23:58:57 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 15:24:57 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:18:11 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*jstr;
 	int		i;
-	int		j;
-	int		ls1;
-	int		ls2;
+	int		len1;
+	int		len2;
+	char	*jointstr;
 
-	if (s1 == NULL || s2 == NULL)
-		return (0);
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (!(jointstr = (char*)malloc((len1 + len2 + 1) * sizeof(char))))
+		return (NULL);
 	i = 0;
-	j = 0;
-	ls1 = ft_strlen(s1);
-	ls2 = ft_strlen(s2);
-	if (!(jstr = ((char *)malloc(ls1 + ls2 + 1))))
-		return (0);
-	while (s1[i] != '\0')
+	while (i < len1)
 	{
-		jstr[i] = s1[i];
-		i = i + 1;
+		jointstr[i] = s1[i];
+		i++;
 	}
-	while (s2[i] != '\0')
+	while (i < len2 + len1)
 	{
-		jstr[i++] = s2[j++];
+		jointstr[i] = s2[i - len1];
+		i++;
 	}
-	jstr[i] = '\0';
-	return (jstr);
+	jointstr[i] = '\0';
+	return (jointstr);
 }
