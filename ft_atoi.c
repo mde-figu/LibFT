@@ -6,44 +6,55 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 18:41:16 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:50:01 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		plusminus(const char *nptr, int *p)
+static	int	iswhtspc(int c, int enteronce)
 {
-	int	sign;
-
-	sign = 1;
-	if (*(nptr + *p) == '+')
-		*p = *p + 1;
-	else if (*(nptr + *p) == '-')
-	{
-		sign = -1;
-		*p = *p + 1;
-	}
-	return (sign);
+	if (((c >= 7 && c <= 13) || c == 32) && enteronce)
+		return (1);
+	else
+		return (0);
 }
 
-int		ft_atoi(const char *nptr)
+static	int	nbrposit(const char *str, int sign)
 {
-	int count;
-	int countstr;
+	int ret;
+
+	ret = 0;
+	while (ft_isdigit(*str))
+	{
+		ret = ret * 10 + *str - '0';
+		str++;
+	}
+	return (sign * ret);
+}
+
+int			ft_atoi(const char *str)
+{
 	int sign;
+	int enteronce;
 
 	sign = 1;
-	count = 0;
-	countstr = 0;
-	while (nptr[count] == '\t' || nptr[count] == '\r' || nptr[count] == '\v'
-			|| nptr[count] == '\f' || nptr[count] == '\n' || nptr[count] == ' ')
-		count = count + 1;
-	sign = plusminus(nptr, &count);
-	while (*(nptr + count) >= 48 && *(nptr + count) >= 57)
+	enteronce = 1;
+	while (*str != '\0')
 	{
-		countstr = ((countstr * 10) + (*(nptr + count) - '0'));
-		count = count + 1;
+		if (*str == '-' && enteronce)
+		{
+			sign = -1;
+			enteronce = 0;
+		}
+		else if (*str == '+' && enteronce)
+			enteronce = 0;
+		else if (ft_isdigit(*str))
+			return (nbrposit(str, sign));
+		else if (!iswhtspc(*str, enteronce))
+			return (0);
+		str++;
 	}
-	return (countstr * sign);
+	return (0);
 }
+
