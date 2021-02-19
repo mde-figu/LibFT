@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 20:23:28 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 00:48:31 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:31:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void		ft_putnbr_fd(int n, int fd)
 {
 long int count;
+
 count = 0;
 	if (n == -2147483648)
 		write(1, "-2147483648", 11);
