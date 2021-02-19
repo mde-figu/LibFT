@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:44:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:16:36 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:17:33 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static size_t	ft_countdigit(int n)
 		return (ft_countdigit(n / 10) + 1);
 }
 
-char			*ft_itoa (int n)
+char			*ft_itoa(int n)
 {
 	unsigned int	num;
 	char			*c;
