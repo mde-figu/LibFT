@@ -6,24 +6,24 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 14:36:40 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:25:22 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:35:37 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isalpha(char c)
+int		ft_isalpha(char c)
 {
-    int ret;
+	int	ret;
 
-    if ((c >= 65 && c <= 90) ||
-     (c >= 97 && c <= 122))
-    {
-        ret = 1;
-    }
-    else
-    {
-        ret = 0;
-    }
-    return (ret);
+	if ((c >= 65 && c <= 90) ||
+	 (c >= 97 && c <= 122))
+	{
+		ret = 1;
+	}
+	else
+	{
+		ret = 0;
+	}
+	return (ret);
 }
