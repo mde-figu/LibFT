@@ -6,35 +6,26 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 16:47:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:19:45 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:06:54 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t len)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned const int	*i;
-	unsigned const int	*j;
-	size_t				count;
-	size_t				res;
+	unsigned int	i;
+	int				calc;
 
-	i = s1;
-	j = s2;
-	count = 0;
-	res = 0;
-	if (s1 == s2)
-		return (res);
-	while (count < len)
+	i = 0;
+	while (i < n)
 	{
-		if (i[count] != j[count])
+		calc = ((*(unsigned char *)(s1 + i)) - (*(unsigned char *)(s2 + i)));
+		if (calc != 0)
 		{
-			res = (i[count] > j[count]) ? 1 : -1;
-			return ((i[count] - j[count]) * res);
+			return (calc);
 		}
-		count = count + 1;
-		i = i + 1;
-		j = j + 1;
+		i++;
 	}
-	return (res);
+	return (0);
 }
