@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 16:17:55 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/19 15:21:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:59:25 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,25 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (little[j] != '\0')
+	if (*(little + i) == '\0')
 	{
-		while (big[i] != '\0')
+		return ((char *)big);
+	}
+	while (*(big + i) != '\0' && i <= len)
+	{
+		if (*(big + i) == *(little + j))
 		{
-			while (big[i + j] == little[j] && (i + j) <= len)
+			j = j + 1;
+			if (*(little + j) == '\0')
 			{
-				if (big[i + j] == '\0' && little[j] == '\0')
-					return ((char *)&big[i]);
-				j = j + 1;
+				return ((char *)(big + i - j + 1));
 			}
-			i = i + 1;
+		}
+		i = i + 1;
+		if (*(little + j) != *(big + i))
+		{
+			j = 0;
 		}
 	}
-	return ((char *)big + i);
+	return (NULL);
 }
