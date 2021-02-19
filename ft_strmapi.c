@@ -6,26 +6,28 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:50:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 15:19:21 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:20:18 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	char	*map;
+	unsigned int		i;
+	char				*result;
+	unsigned int		len;
 
-	i = -1;
-	map = malloc((ft_strlen(s) + 1) * sizeof(*map));
-	if (s == NULL || map == NULL)
+	i = 0;
+	if (s == NULL || f == NULL)
 		return (NULL);
-	while (i < ft_strlen(s))
+	len = ft_strlen(s);
+	result = malloc(sizeof(char) * (len + 1));
+	while (s[i] != '\0')
 	{
-		i = i + 1;
-		map[i] = f(i, s[i]);
+		result[i] = f(i, s[i]);
+		i++;
 	}
-	map[i] = '\0';
-	return (map);
+	result[i] = '\0';
+	return (result);
 }
