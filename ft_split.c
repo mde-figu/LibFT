@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 17:06:50 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:07:47 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ static int		ft_charcount(const char *str, char c)
 	}
 	return (i);
 }
-static char	*ft_dupstr(const char *str, int start, int end)
+static char		*ft_dupstr(const char *str, int start, int end)
 {
-	char    *substr;
-	int     i;
+	char    	*substr;
+	int     	i;
 
 	i = 0;
 	substr = malloc((end - start) * sizeof(char));
@@ -45,7 +45,7 @@ static char	*ft_dupstr(const char *str, int start, int end)
 	return (substr);
 }
 
-char		**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
