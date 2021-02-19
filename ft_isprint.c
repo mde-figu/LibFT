@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:23:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:28:57 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:55:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 int		ft_isprint(char c)
 {
-	int	ret;
-
 	if (c >= 20 && c <= 126)
-	{
-		ret = 1;
-	}
+		return(1);
 	else
-	{
-		ret = 0;
-	}
-	return (ret);
+		return (0);
 }
