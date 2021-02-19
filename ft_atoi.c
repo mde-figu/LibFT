@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 18:39:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:41:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static int		plusminus(const char *nptr, int *p)
 	}
 	return (sign);
 }
+
 int		ft_atoi(const char *nptr)
 {
 	int count;
