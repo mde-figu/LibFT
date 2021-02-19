@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/19 13:59:28 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/19 14:09:08 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,11 @@ NAME = libft.a
 
 COMP = clang
 
-FLAGS += -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 
-CFLAGS += -Wall -Werror -Wextra -I./ -c
+CFLAGS = -Wall -Werror -Wextra -I./ -c
 
-LIB = ar -rcs
-
-LIB1 = ranlib
+LIB = ar -rc
 
 RM = rm -f
 
@@ -42,16 +40,15 @@ ft_lstadd_front.c ft_lstmap.c ft_lstiter.c ft_lstlast.c ft_lstdelone.c
 
 OBJECTSBONUS = $(BONUS:.c=.o)
 
-$(NAME):	$(FILES) 
-			$(COMP) $(LIB) $(NAME) $(FILES)
-			$(LIB1) $(NAME)
+$(NAME):	$(OBJECTS) 
+			$(COMP) -c $(FILES)
+			$(LIB) $(NAME) $(OBJECTS)
 
 all:	$(NAME)
 
 bonus:		$(OBJECTSBONUS)
 		$(BONUS) $(HEADER)
 		$(LIB) $(NAME) $(BONUS)
-		$(LIB1) $(NAME)
 
 .c.o:	$(COMP) $(FLAGS) -c $< -o $(<:.c=.o)
 
