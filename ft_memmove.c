@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:41:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:28:12 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 01:30:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void        *memmove(void *dest, const void *src, size_t len)
 {
-    int i;
+    size_t i;
     unsigned char   *ptsrc;
     unsigned char   *ptdest;
     i = 0;
-    ptsrc == (unsigned char*)src;
-    ptdest == (unsigned char*)dest;
-    if (dest == NULL && src == NULL)
+    ptsrc = (unsigned char *)src;
+    ptdest = (unsigned char *)dest;
+    if (*ptdest == '\0' && *ptsrc == '\0')
         return (0);
     if (ptsrc == ptdest)
         return (0);

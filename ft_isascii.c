@@ -6,17 +6,17 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 15:32:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:25:27 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 01:22:18 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(char c)
+int		ft_isascii(int c)
 {
 	int ret;
 
-	if (c >= 0 && c <= 127)
+	if (c >= 0000 && c <= 0177)
 		ret = 1;
 	else
 		ret = 0;

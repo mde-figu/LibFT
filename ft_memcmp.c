@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 16:47:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:27:57 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 01:13:37 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int     ft_memcmp(const void *s1, const void *s2, size_t len)
 {
-    unsigned int *i;
-    unsigned int *j;
+    unsigned const int *i;
+    unsigned const int *j;
     size_t count;
     size_t res;
     i = s1;
@@ -28,10 +28,10 @@ int     ft_memcmp(const void *s1, const void *s2, size_t len)
     
     while (count < len)
     {
-        if (*i[count] != *j[count])
+        if (i[count] != j[count])
         {
-            res = (*i[count] > *j[count])?1:-1;
-            return ((*i[count] - *j[count]) * res);
+            res = (i[count] > j[count])?1:-1;
+            return ((i[count] - j[count]) * res);
         }
         count = count + 1;
         i = i + 1;

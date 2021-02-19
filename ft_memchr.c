@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:02:11 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:27:49 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 01:11:11 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void        *ft_memchr(const void *s, int c, size_t len)
 
     while ((s != NULL ) && (len--))
     {
-        if (*p != (unsigned char*)c)
+        if (*p != (unsigned char)c)
         {
             p = p + 1;
         }

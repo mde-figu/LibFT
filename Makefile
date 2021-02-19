@@ -6,17 +6,24 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/18 17:16:50 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/19 00:18:46 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
 COMP = gcc
-FLAGS = -Wall -Werror -Wextra
+
+FLAGS += -Wall -Werror -Wextra
+
 LIB = ar -rcs
+
 LIB1 = ranlib
+
 RM = /bin/rm -f
+
 HEADER = libft.h
+
 FILES = ft_isprint.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_atoi.c \
  ft_itoa.c ft_putchar_fd.c ft_strlcat.c ft_substr.c ft_bzero.c \
  ft_putendl_fd.c ft_strlcpy.c ft_tolower.c \
@@ -25,16 +32,19 @@ FILES = ft_isprint.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_atoi.c \
  ft_isalpha.c ft_memcmp.c ft_split.c ft_strncmp.c ft_isascii.c \
  ft_memcpy.c ft_strchr.c ft_strnstr.c ft_isdigit.c \
  ft_memmove.c ft_strdup.c ft_strrchr.c
+
 OBJECTS = $(FILES: .c=.o)
+
 BONUS = ft_lstnew.c ft_lstadd_back.c ft_lstsize.c ft_lstclear.c \
 ft_lstadd_front.c ft_lstmap.c ft_lstiter.c ft_lstlast.c ft_lstdelone.c 
+
 OBJECTSBONUS = $(BONUS:.c=.o)
 
 all:	$(NAME)
-
 $(NAME):	$(FILES) $(HEADER)
 			$(LIB) $(NAME) $(FILES)
 			$(LIB1) $(NAME)
+
 bonus:		$(OBJECTSBONUS)
 		$(BONUS) $(HEADER)
 		$(LIB) $(NAME) $(BONUS)

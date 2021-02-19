@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:24:58 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 00:27:36 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_atoi(const char *nptr)
 	count = 0;
 	countstr = 0;
 	while (nptr[count] == '\t' || nptr[count] == '\r' || nptr[count] == '\v'
-            nptr[count] == '\f' || nptr[count] == '\n' || nptr[count] == ' ')
+          || nptr[count] == '\f' || nptr[count] == '\n' || nptr[count] == ' ')
 		count = count + 1;
 	if (nptr[count] == '-' || nptr[count] == '+')
 	{

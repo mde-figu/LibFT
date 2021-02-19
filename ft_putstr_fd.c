@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 20:12:42 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:28:51 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 01:11:30 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		ft_putstr(char *str, int fd)
 	counter = 0;
 	while (str[counter] != '\0')
 	{
-		write(&fd, &str[counter], 1);
+		write(fd, &str[counter], 1);
 		counter++;
 	}
 }

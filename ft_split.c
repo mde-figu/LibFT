@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:28:55 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 01:20:27 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static int      ft_charcount(const char *str, char c)
 
     i = 0;
     stop = 0;
-    while (*str != NULL)
+    while (str != NULL)
     {
         if (*str != c && stop == 0)
         {
             stop = 1;
             i = i + 1;
         }
-        else if (*str == c);
+        else if (*str == c)
             stop = 0;
         str = str + 1;
     }
@@ -38,7 +38,7 @@ static  char    *ft_dupstr(const char *str, int start, int end)
     int     i;
 
     i = 0;
-    substr = malloc(end - start) * sizeof(char)
+    substr = malloc((end - start) * sizeof(char));
     while (start < end)
         substr[i++] = str[start++];
     substr[i] = '\0';
@@ -50,19 +50,19 @@ char        **ft_split(char const *s, char c)
     size_t  i;
     size_t  j;
     int     count;
-    char    result;
+    char    **result;
 
     i = 0;
     j = 0;
     count = -1;
-    result = malloc((ft_charcount(s, c) + 1) * sizeof(char *))
+    result = malloc((ft_charcount(s, c) + 1) * sizeof(char *));
     if (s == NULL || result == NULL)
         return (0);
     while (i <= ft_strlen(s))
     {
         if (count < 0 && s[i] != c)
             count = count + 1;
-        else if (count >= 0 && s[i] == ft_strlen(s) || s[i] == c)
+        else if ((count >= 0 && i == ft_strlen(s)) || s[i] == c)
         {
             result[j++] = ft_dupstr(s, count, i);
             count = -1;

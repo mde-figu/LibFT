@@ -6,15 +6,15 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 23:58:57 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:29:11 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 00:26:59 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const s1, char const s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*jstr
+	char	*jstr;
 	int	i;
 	int	j;
 	int	ls1;
@@ -39,6 +39,6 @@ char		*ft_strjoin(char const s1, char const s2)
 		i = i + 1;
 		j = j + 1;
 	}
-	nstr[i] = '\0';
-	return(nstr);
+	jstr[i] = '\0';
+	return(jstr);
 }

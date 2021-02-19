@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 16:04:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:25:03 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 00:43:14 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void        ft_bzero(void *s, size_t n)
 {
-    if (s >= 0)
-    ft_memset(s, '\0' , n)
-
-    return (0);
+    if (sizeof(s) >= 0)
+    ft_memset(s, '\0' , n);
 }
