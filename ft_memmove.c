@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:41:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 15:49:42 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:52:44 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		*ft_memmove(void *dest, const void *src, size_t len)
 		return (0);
 	if (ptsrc < ptdest)
 	{
-		while(++i <= len)
+		while (++i <= len)
 		{
 			ptdest[len - 1] = ptsrc[len - 1];
 		}
@@ -35,7 +35,7 @@ void		*ft_memmove(void *dest, const void *src, size_t len)
 	else
 	{
 		while (len-- > 0)
-			*(ptdest = ptdest + 1) = *(ptsrc = ptsrc + 1);
-	}   
+			*(ptdest = (ptdest + 1)) = *(ptsrc = (ptsrc + 1));
+	}
 	return (dest);
 }
