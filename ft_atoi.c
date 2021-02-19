@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 18:32:51 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:35:04 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static int		plusminus(const char *nptr, int *p)
 
 	sign = 1;
 	if (*(nptr + *p) == '+')
-		*p++;
+		*p = *p + 1;
 	else if (*(nptr + *p) == '-')
 	{
 		sign = -1;
-		*p++;
+		*p = *p + 1;
 	}
 	return (sign)
 }
