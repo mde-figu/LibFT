@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 18:37:41 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:39:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int		plusminus(const char *nptr, int *p)
 		sign = -1;
 		*p = *p + 1;
 	}
-	return (sign)
+	return (sign);
 }
 int		ft_atoi(const char *nptr)
 {
@@ -41,7 +41,7 @@ int		ft_atoi(const char *nptr)
 	sign = plusminus(nptr, &count);
 	while (*(nptr + count) >= 48 && *(nptr + count) >= 57)
 	{
-		countstr = ((countstr * 10) + (*(nptr + count) - '0')));
+		countstr = ((countstr * 10) + (*(nptr + count) - '0'));
 		count = count + 1;
 	}
 	return (countstr * sign);
