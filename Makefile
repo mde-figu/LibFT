@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/19 18:13:47 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/19 20:30:19 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,9 @@ $(NAME):	$(OBJECTS)
 
 all:	$(NAME)
 
-#bonus:		$(OBJECTSBONUS)
-#		$(BONUS) $(HEADER)
-#		$(LIB) $(NAME) $(BONUS)
+bonus:		$(OBJECTSBONUS)
+		$(BONUS) $(HEADER)
+		$(LIB) $(NAME) $(OBJECTSBONUS)
 
 .c.o:	$(COMP) $(FLAGS) -c $< -o $(<:.c=.o)
 
@@ -58,14 +58,13 @@ so:
 	gcc -shared -o libft.so $(OBJECTS)
 
 clean:
-		$(RM) $(OBJECTS) 
-		#$(OBJECTSBONUS)
+		$(RM) $(OBJECTS) $(OBJECTSBONUS)
 
 fclean:	clean
 		$(RM) $(NAME)
 
 re:	fclean all
 
-#rebonus:	fclean bonus
+rebonus:	fclean bonus
 
 .PHONY: all clean fclean re
