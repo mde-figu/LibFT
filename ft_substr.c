@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:42:03 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 15:16:16 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:18:08 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*nstr;
-	size_t  i;
-	size_t  j;
+	size_t	i;
+	size_t	j;
 
 	nstr = ((char *)malloc(len + 1));
 	if (s == NULL || nstr == NULL)
@@ -30,6 +30,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i = i + 1;
 	}
 	nstr[j] = '\0';
-	return(nstr);
-
+	return (nstr);
 }
