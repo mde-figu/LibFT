@@ -6,70 +6,97 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 17:10:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:56:10 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_charcount(const char *str, char c)
+static	int		firstposit(char const *str, char c, int start)
 {
-	int	i;
-	int	stop;
-
-	i = 0;
-	stop = 0;
-	while (str != NULL)
-	{
-		if (*str != c && stop == 0)
-		{
-			stop = 1;
-			i = i + 1;
-		}
-		else if (*str == c)
-			stop = 0;
-		str = str + 1;
-	}
-	return (i);
+	while (str[start] == c)
+		start++;
+	return (start);
 }
 
-static char		*ft_dupstr(const char *str, int start, int end)
+static	int		lastposit(char const *str, char c, int start)
 {
-	char	*substr;
+	while (str[start] != c && str[start] != '\0')
+		start++;
+	return (start);
+}
+
+static	int		nb_of_strs(char const *s, char c)
+{
+	int nb;
+	int checkonce;
+
+	nb = 0;
+	checkonce = 1;
+	while (*s != '\0')
+	{
+		if (*s == c)
+			checkonce = 1;
+		else if (*s != c && checkonce)
+		{
+			nb++;
+			checkonce = 0;
+		}
+		s++;
+	}
+	return (nb);
+}
+
+static	char	**str_null(char **s)
+{
+	char	**str;
 	int		i;
 
 	i = 0;
-	substr = malloc((end - start) * sizeof(char));
-	while (start < end)
-		substr[i++] = str[start++];
-	substr[i] = '\0';
-	return (substr);
+	if (s != NULL)
+	{
+		while (s[i])
+		{
+			free(s[i]);
+			i++;
+		}
+		free(s);
+		return (NULL);
+	}
+	else
+	{
+		if (!(str = (char**)malloc(sizeof(char*))))
+			return (NULL);
+		str[0] = NULL;
+		return (str);
+	}
 }
 
 char			**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		count;
-	char	**result;
+	char	**sstr;
+	int		sn;
+	int		i;
+	int		start;
+	int		end;
 
+	end = 0;
 	i = 0;
-	j = 0;
-	count = -1;
-	result = malloc((ft_charcount(s, c) + 1) * sizeof(char *));
-	if (s == NULL || result == NULL)
-		return (0);
-	while (i <= ft_strlen(s))
+	if (s == NULL)
+		return (str_null(NULL));
+	sn = nb_of_strs(s, c);
+	if (!(sstr = (char**)malloc((sn + 1) * sizeof(char*))))
+		return (NULL);
+	while (i < sn)
 	{
-		if (count < 0 && s[i] != c)
-			count = count + 1;
-		else if ((count >= 0 && i == ft_strlen(s)) || s[i] == c)
-		{
-			result[j++] = ft_dupstr(s, count, i);
-			count = -1;
-		}
-		i = i + 1;
+		start = firstposit(s, c, end);
+		end = lastposit(s, c, start);
+		if (!(sstr[i] = (char*)malloc((end - start + 1) * sizeof(char))))
+			str_null(sstr);
+		ft_strlcpy(sstr[i++], (s + start), (end++ - start + 1));
 	}
-	result[j] = ((char *)'\0');
-	return (result);
+	if (!(sstr[i] = (char*)malloc(sizeof(char))))
+		return (NULL);
+	sstr[i] = NULL;
+	return (sstr);
 }
