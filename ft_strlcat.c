@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 13:50:34 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 20:06:04 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:08:06 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t		*ft_strlcat(char *dst, const char *src, size_t dstlen)
 		i1++;
 	if (dstlen < i2)
 	{
-		return (dstlen + i1);
+		return (*(dstlen + i1));
 	}
-	return (i2 + i1);
+	return (*(i2 + i1));
 }
