@@ -6,16 +6,16 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 17:03:05 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:05:23 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int      ft_charcount(const char *str, char c)
+static int		ft_charcount(const char *str, char c)
 {
-	int i;
-	int stop;
+	int	i;
+	int	stop;
 
 	i = 0;
 	stop = 0;
@@ -32,7 +32,7 @@ static int      ft_charcount(const char *str, char c)
 	}
 	return (i);
 }
-static  char    *ft_dupstr(const char *str, int start, int end)
+static	char	*ft_dupstr(const char *str, int start, int end)
 {
 	char    *substr;
 	int     i;
