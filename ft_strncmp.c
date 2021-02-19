@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 20:36:34 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/19 19:37:41 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:38:54 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		c = (unsigned char)*s1;
 		s1 = s1 + 1;
-		s = (unsigned char)*s2;
+		d = (unsigned char)*s2;
 		s2 = s2 + 1;
 		if (c == '\0' || c != d)
 			return (c - d);
