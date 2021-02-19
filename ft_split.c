@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 17:08:54 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:10:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static int		ft_charcount(const char *str, char c)
 	}
 	return (i);
 }
+
 static char		*ft_dupstr(const char *str, int start, int end)
 {
 	char	*substr;
