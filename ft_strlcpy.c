@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 11:44:30 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 19:16:14 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:17:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	while (src[j] != '\0')
-		j = j + 1;
+	while (src[srcsize] != '\0')
+		srcsize = srcsize + 1;
 	return (srcsize);
 }
