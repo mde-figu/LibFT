@@ -6,19 +6,19 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:47:08 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:27:18 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:27:41 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list      *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list  *lst;
+	t_list *new;
 
-    lst = malloc(sizeof(t_list));
-    if (lst == NULL)
-        return (0);
-    lst->content = content;
-    lst
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
