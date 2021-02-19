@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:58:22 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:58:55 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ char        **ft_split(char const *s, char c)
         }
         i = i + 1;
     }
-    result[j] = ((char **)'\0');
+    result[j] = ((char *)'\0');
     return (result);
 }
