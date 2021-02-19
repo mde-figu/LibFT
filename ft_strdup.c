@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:16:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 01:37:46 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 14:28:20 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char        *strdup(const char *s)
 char *ret;
 
 ret = ((char *)malloc(ft_strlen(s) + 1));
-if (ret == NULL || ft_strlen(s) == NULL)
+if (ret == NULL || ft_strlen(s) == '\0')
     return (0);
 else
 {
