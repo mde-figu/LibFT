@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 11:44:30 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 00:44:52 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:11:30 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	if (dst == NULL || src == NULL)
 		return (0);
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	srcsize = ft_strlen(src);
 	i = 0;
 	if (dstsize != 0)
