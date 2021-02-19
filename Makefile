@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/19 20:31:56 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/19 20:33:15 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,9 @@ $(NAME):	$(OBJECTS)
 
 all:	$(NAME)
 
-bonus:		$(OBJECTSBONUS)
-		$(BONUS) $(HEADER)
-		$(LIB) $(NAME) $(BONUS)
+bonus:
+	gcc $(CFLAGS) $(SRC_BONUS)
+	ar rc $(NAME) $(OBJ_BONUS)
 
 .c.o:	$(COMP) $(FLAGS) -c $< -o $(<:.c=.o)
 
