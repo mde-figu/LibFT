@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:41:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 01:30:16 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 14:25:22 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void        *memmove(void *dest, const void *src, size_t len)
+void        *ft_memmove(void *dest, const void *src, size_t len)
 {
     size_t i;
     unsigned char   *ptsrc;
