@@ -6,13 +6,13 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/19 13:55:54 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/19 13:59:28 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-COMP = gcc
+COMP = clang
 
 FLAGS += -Wall -Werror -Wextra
 
