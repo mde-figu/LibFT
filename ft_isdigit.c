@@ -6,23 +6,23 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 15:22:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:25:31 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:31:35 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isdigit(char c)
+int		ft_isdigit(char c)
 {
-    int ret;
+	int ret;
 
-    if (c >= 48 && c <= 57)
-    {
-        ret = 1;
-    }
-    else
-    {
-        ret = 0;
-    }
-    return (ret);
+	if (c >= 48 && c <= 57)
+	{
+		ret = 1;
+	}
+	else
+	{
+		ret = 0;
+	}
+	return (ret);
 }
