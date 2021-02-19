@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/19 00:18:46 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/19 13:55:54 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,13 @@ COMP = gcc
 
 FLAGS += -Wall -Werror -Wextra
 
+CFLAGS += -Wall -Werror -Wextra -I./ -c
+
 LIB = ar -rcs
 
 LIB1 = ranlib
 
-RM = /bin/rm -f
+RM = rm -f
 
 HEADER = libft.h
 
@@ -33,17 +35,18 @@ FILES = ft_isprint.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_atoi.c \
  ft_memcpy.c ft_strchr.c ft_strnstr.c ft_isdigit.c \
  ft_memmove.c ft_strdup.c ft_strrchr.c
 
-OBJECTS = $(FILES: .c=.o)
+OBJECTS = $(FILES:.c=.o)
 
 BONUS = ft_lstnew.c ft_lstadd_back.c ft_lstsize.c ft_lstclear.c \
 ft_lstadd_front.c ft_lstmap.c ft_lstiter.c ft_lstlast.c ft_lstdelone.c 
 
 OBJECTSBONUS = $(BONUS:.c=.o)
 
-all:	$(NAME)
-$(NAME):	$(FILES) $(HEADER)
-			$(LIB) $(NAME) $(FILES)
+$(NAME):	$(FILES) 
+			$(COMP) $(LIB) $(NAME) $(FILES)
 			$(LIB1) $(NAME)
+
+all:	$(NAME)
 
 bonus:		$(OBJECTSBONUS)
 		$(BONUS) $(HEADER)
