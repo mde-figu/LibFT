@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 13:50:34 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 20:11:36 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:12:52 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstlen)
 {
 	size_t i;
 	size_t j;
