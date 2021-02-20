@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 18:51:59 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 18:06:10 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static	int	nbrposit(const char *str, int sign)
 
 int			ft_atoi(const char *str)
 {
-	int sign;
-	int enteronce;
+	long int sign;
+	long int enteronce;
 
 	sign = 1;
 	enteronce = 1;
