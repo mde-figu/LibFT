@@ -6,7 +6,7 @@
 /*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 19:56:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/20 17:20:14 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/02/20 17:30:20 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char        *ft_strnstr(const char *big, const char *little, size_t len);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strtrim(char const *s1, char const *set);
 char        *ft_substr(char const *s, unsigned int start, size_t len);
-char        ft_tolower(int c);
-char		ft_toupper(int c);
+int        ft_tolower(int c);
+int		ft_toupper(int c);
 
 #endif

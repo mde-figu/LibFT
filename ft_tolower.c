@@ -6,13 +6,13 @@
 /*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:31:44 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/20 17:27:47 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/02/20 17:30:29 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		ft_tolower(int c)
+int		ft_tolower(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (c - 32);
