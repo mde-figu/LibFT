@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 19:56:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 20:14:51 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 17:15:15 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_atoi(const char *nptr);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
-int		ft_isalpha(char c);
+int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(char c);
 int		ft_isprint(char c);
