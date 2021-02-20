@@ -6,7 +6,7 @@
 /*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 12:25:42 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/20 17:49:25 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/02/20 17:50:45 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void		*ft_calloc(size_t nmemb, size_t size)
 	i = nmemb * size;
 	if (nmemb == 0)
 		return (0);
+	else if (size == 0)
+		return (ptr);
 	else
 	{
 		ptr = malloc(i);
 		if (!ptr)
 			return (NULL);
-		else if (size == 0)
-			return (ptr);
 		ft_bzero(ptr, i);
 		return (ptr);
 	}
