@@ -6,7 +6,7 @@
 /*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:41:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 23:27:10 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/02/20 12:13:05 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 	char			temp[n + 1];
 
 	i = 0;
 	temp[0] = 0;
-	while (i < n)
+	if(dest && src)
 	{
-		temp[i] = *((char *)src + i);
-		i++;
-	}
-	i = 0;
-	while (i < n)
-	{
-		*((char *)dest + i) = temp[i];
-		i++;
+		while (i < n)
+		{
+			temp[i] = *((char *)src + i);
+			i++;
+		}
+		i = 0;
+		while (i < n)
+		{
+			*((char *)dest + i) = temp[i];
+			i++;
+		}
 	}
 	return (dest);
 }
