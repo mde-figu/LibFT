@@ -6,7 +6,7 @@
 /*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:50:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/20 14:11:11 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/02/20 18:46:42 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	len = ft_strlen(s);
 	result = malloc(sizeof(char) * (len + 1));
-	if(!result)
+	if (!result)
 		return (NULL);
 	while (s[i] != '\0')
 	{
