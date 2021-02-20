@@ -6,7 +6,7 @@
 /*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:44:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/20 18:32:13 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/02/20 18:35:35 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ char			*ft_itoa(int n)
 	size_t			len;
 	char			*str;
 
-	if ((len = counter(n)) < 0)
+	len = counter(n);
+	if (n < 0)
 	{
 		integer = -(unsigned int)n;
 		len++;
