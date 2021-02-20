@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 12:25:42 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/19 16:30:21 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 17:41:28 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void		*ft_calloc(size_t nmemb, size_t size)
 	else
 	{
 		ptr = malloc(i);
+		if (!ptr)
+			return (NULL);
 		ft_bzero(ptr, i);
 		return (ptr);
 	}
