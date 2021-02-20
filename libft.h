@@ -6,7 +6,7 @@
 /*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 19:56:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/20 17:15:15 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/02/20 17:17:26 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
-int		ft_isdigit(char c);
+int		ft_isdigit(int c);
 int		ft_isprint(char c);
 char		*ft_itoa (int n);
 void		*ft_memccpy(void *dest, const void *src, int c, size_t len);
