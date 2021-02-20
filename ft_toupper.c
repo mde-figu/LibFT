@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:06:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/18 17:30:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 17:24:13 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 char		ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-		return (c - 32);
+		return (c - 97 + 65);
 	return (c);
 }
