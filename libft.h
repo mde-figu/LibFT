@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 19:56:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/22 13:37:36 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/22 13:38:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ size_t				ft_strlen(const char *str);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *big, const char *little,
-								 size_t len);
+								size_t len);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
