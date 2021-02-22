@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 13:09:35 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/22 13:25:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/22 13:30:07 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst)
 		return ;
-	del (lst->content);
+	del(lst->content);
 	free(lst);
 }
