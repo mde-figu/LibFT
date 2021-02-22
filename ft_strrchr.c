@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 19:28:34 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/22 14:28:56 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/22 14:37:11 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*(s + len) == (char)c)
 			return ((char *)s + len);
-		len = len + 1;
+		len = len - 1;
 	}
 	return (NULL);
 }
