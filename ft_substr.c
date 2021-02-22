@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:42:03 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/22 14:35:16 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/22 14:40:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*nstr;
 	size_t	i;
-	
+
 	if (!s)
 		return (NULL);
 	if ((int)len <= 0 || (int)start < 0 ||
@@ -37,5 +37,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start = start + 1;
 	}
 	*(nstr + i) = '\0';
-	return (nstr) ;
+	return (nstr);
 }

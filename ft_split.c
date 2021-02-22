@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/22 13:59:07 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/22 14:39:51 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static size_t	wordlength(char const *s, char c)
 	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] !=c)
-		i =i + 1;
+	while (s[i] && s[i] != c)
+		i = i + 1;
 	return (i);
 }
 
@@ -31,7 +31,7 @@ static size_t	wordcounter(char const *s, char c)
 	total = 0;
 	while (s[i] && s[i] == c)
 		i = i + 1;
-	while(s[i])
+	while (s[i])
 	{
 		while (s[i] && s[i] != c)
 			i = i + 1;
@@ -45,7 +45,7 @@ static size_t	wordcounter(char const *s, char c)
 static char		*nextword(char const *s, char c)
 {
 	while (*s && *s == c)
-		s =s + 1;
+		s = s + 1;
 	return ((char*)s);
 }
 
