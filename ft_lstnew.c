@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 11:36:22 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/22 13:25:17 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/22 13:34:07 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ t_list		*ft_lstnew(void *content)
 	{
 		return (0);
 	}
-	else
-	{
-		new->content = content;
-		new->next = NULL;
-		return (new);
-	}
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
