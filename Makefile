@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/22 13:42:26 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/22 14:44:07 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ FLAGS = -Wall -Werror -Wextra
 CFLAGS = -Wall -Werror -Wextra -I./ -c
 
 LIB = ar -rc
+
+RLIB = ranlib
 
 RM = rm -f
 
@@ -43,11 +45,13 @@ BOBJECTS = $(BONUS_F:.c=.o)
 $(NAME):	$(OBJECTS) 
 			$(COMP) -c $(FILES)
 			$(LIB) $(NAME) $(OBJECTS)
+			$(RLIB) $(NAME)
 
 all:	$(NAME)
 
 bonus:		$(NAME) $(BOBJECTS)
 			$(LIB) $(NAME) $(BOBJECTS)
+			$(RLIB) $(NAME)
 
 .c.o:	$(COMP) $(FLAGS) -c $< -o $(<:.c=.o)
 
