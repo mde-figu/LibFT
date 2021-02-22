@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/22 14:44:07 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/22 14:47:29 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ OBJECTS = $(FILES:.c=.o)
 BONUS = ft_lstclear.c ft_lstdelone.c ft_lstlast.c ft_lstlast.c ft_lstnew.c \
  ft_lstsize.c
 
-BOBJECTS = $(BONUS_F:.c=.o)
+BOBJECTS = $(BONUS:.c=.o)
 
 $(NAME):	$(OBJECTS) 
 			$(COMP) -c $(FILES)
