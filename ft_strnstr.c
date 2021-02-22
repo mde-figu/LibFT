@@ -3,39 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 16:17:55 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/19 20:01:35 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 17:38:27 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *small, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t needle_len;
 
-	i = 0;
-	j = 0;
-	if (*(little + i) == '\0')
+	needle_len = ft_strlen(small);
+	if (!needle_len)
 		return ((char *)big);
-	while (*(big + i) != '\0' && i <= len)
+	while (*big && len >= needle_len)
 	{
-		if (*(big + i) == *(little + j))
-		{
-			j = j + 1;
-			if (*(little + j) == '\0')
-			{
-				return ((char *)(big + i - j + 1));
-			}
-		}
-		i = i + 1;
-		if (*(little + j) != *(big + i))
-		{
-			j = 0;
-		}
+		if (!ft_strncmp(big, small, needle_len))
+			return ((char *)big);
+		big++;
+		len--;
 	}
 	return (NULL);
 }

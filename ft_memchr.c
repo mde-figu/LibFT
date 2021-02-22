@@ -3,33 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:02:11 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:42:12 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 14:03:14 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memchr(const void *s, int c, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*p;
-	unsigned char	*fdchar;
-
-	p = (unsigned char *)s;
-	fdchar = (unsigned char *)NULL;
-	while ((s != NULL) && (len--))
-	{
-		if (*p != (unsigned char)c)
-		{
-			p = p + 1;
-		}
-		else
-		{
-			fdchar = p;
-			break ;
-		}
-	}
-	return (fdchar);
+	if (!n)
+		return (0);
+	else if (*(unsigned char*)s == (unsigned char)c)
+		return ((void *)s);
+	else
+		return (ft_memchr(++s, c, --n));
 }

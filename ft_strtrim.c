@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 11:34:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 19:45:48 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 18:40:55 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char				*ft_strtrim(char const *s1, char const *set)
 	newstart = test_start(s1, set);
 	if (newstart == k + 1)
 	{
+		if (!(ft_calloc(1, sizeof(char))))
+			return (NULL);
 		return (ft_calloc(1, sizeof(char)));
 	}
 	while (k >= newstart && ft_strchr(set, s1[k]))

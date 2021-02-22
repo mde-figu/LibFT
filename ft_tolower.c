@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:31:44 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 15:18:45 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 18:46:58 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		ft_tolower(int c)
+int		ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
-		return (c + 32);
+		return (c + 97 - 65);
 	return (c);
 }

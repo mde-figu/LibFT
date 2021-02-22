@@ -3,57 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 18:51:59 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/02/20 18:27:09 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	iswhtspc(int c, int enteronce)
+static int	iswhtspc(char str)
 {
-	if (((c >= 7 && c <= 13) || c == 32) && enteronce)
+	if (str == 0x20 || (str >= 0x09 && str <= 0x0d))
 		return (1);
-	else
-		return (0);
-}
-
-static	int	nbrposit(const char *str, int sign)
-{
-	int ret;
-
-	ret = 0;
-	while (ft_isdigit(*str))
-	{
-		ret = ret * 10 + *str - '0';
-		str++;
-	}
-	return (sign * ret);
+	return (0);
 }
 
 int			ft_atoi(const char *str)
 {
+	int i;
+	int j;
 	int sign;
-	int enteronce;
 
-	sign = 1;
-	enteronce = 1;
-	while (*str != '\0')
-	{
-		if (*str == '-' && enteronce)
-		{
-			sign = -1;
-			enteronce = 0;
-		}
-		else if (*str == '+' && enteronce)
-			enteronce = 0;
-		else if (ft_isdigit(*str))
-			return (nbrposit(str, sign));
-		else if (!iswhtspc(*str, enteronce))
-			return (0);
+	i = 0;
+	j = 0;
+	sign = -1;
+	while (iswhtspc(*str))
 		str++;
+	if (*str == '+' || *str == '-')
+		if (*str++ == '-')
+			sign = 1;
+	while (*str >= '0' && *str <= '9')
+	{
+		i = i * 10 - (*str++ - '0');
+		if (j < i)
+		{
+			if (sign < 0)
+				return (-1);
+			return (0);
+		}
+		j = i;
 	}
-	return (0);
+	return (i * sign);
 }
