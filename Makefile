@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+         #
+#    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/21 11:44:51 by mirkios          ###   ########.fr        #
+#    Updated: 2021/02/22 13:22:48 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,10 @@ FILES = ft_isprint.c ft_memset.c ft_strjoin.c ft_strtrim.c ft_atoi.c \
 
 OBJECTS = $(FILES:.c=.o)
 
+BONUS = ft_lstclear.c ft_lstdelone.c ft_lstlast.c ft_lstlast.c ft_lstnew.c \
+ ft_lstsize.c
 
+BOBJECTS = $(BONUS_F:.c=.o)
 
 $(NAME):	$(OBJECTS) 
 			$(COMP) -c $(FILES)
@@ -43,6 +46,8 @@ $(NAME):	$(OBJECTS)
 
 all:	$(NAME)
 
+bonus:		$(NAME) $(BOBJECTS)
+			$(LIB) $(NAME) $(BOBJECTS)
 
 .c.o:	$(COMP) $(FLAGS) -c $< -o $(<:.c=.o)
 
@@ -51,12 +56,13 @@ so:
 	gcc -shared -o libft.so $(OBJECTS)
 
 clean:
-		$(RM) $(OBJECTS)
+		$(RM) $(OBJECTS) $(BOBJECTS)
 
 fclean:	clean
 		$(RM) $(NAME)
 
 re:	fclean all
 
+rebonus
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus rebonus
