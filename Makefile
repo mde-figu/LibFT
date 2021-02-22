@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 12:06:18 by mde-figu          #+#    #+#              #
-#    Updated: 2021/02/22 13:22:48 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/02/22 13:42:26 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,6 @@ fclean:	clean
 
 re:	fclean all
 
-rebonus
+rebonus:	fclean bonus
 
 .PHONY: all clean fclean re bonus rebonus
